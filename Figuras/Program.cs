@@ -1,5 +1,6 @@
 ﻿
 
+using Figuras;
 using Poo;
 
 Rectangulo rectangulo = new Rectangulo { Base = 5, Altura = 10 };

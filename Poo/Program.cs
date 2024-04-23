@@ -5,15 +5,22 @@ using Poo;
 
 //PUNTO 1
 
-Persona persona1 = new Persona("Juan", "Buenos Aires", 30);
-persona1.MostrarInfo();
-int edadEnAnios = persona1.CalcularEdadEnAños();
-Console.WriteLine($"La edad de {persona1.Nombre} es aproximadamente {edadEnAnios} años.");
+DateTime fechaNacimiento = new DateTime(2004, 5, 5);
+
+Persona persona = new Estudiante("oscar","PR",fechaNacimiento,"Matricula", "2022-7896");
+Console.WriteLine("====Persona====");
+int edad = persona.CalcularEdadEnAños();
+persona.MostrarInfo();
+Console.WriteLine($"La edad de {persona.Nombre} es {edad} years"  );
+Console.WriteLine("\n");
 
 
 //PUNTO 2
 
-Estudiante estudiante1 = new Estudiante("Pepe", "pr", 30, "Software", "2022-2031");
-estudiante1.MostrarInfo();
+Console.WriteLine("====Estudiante====");
+
+Estudiante estudiante1 = new Estudiante("Pepe", "pr", fechaNacimiento, "Software", "2022-2031");
+
+estudiante1.MostrarInfoestudiante();
 
 

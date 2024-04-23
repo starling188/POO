@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Poo
 {
-    public class Persona
+    public abstract class Persona
     {
         public string? Nombre { get; set; }
         public string? Ciudad { get; set; }
-        public int Edad { get; set; }
+        public DateTime FechaNacimiento { get; set; }
 
-        public Persona(string nombre, string ciudad, int edad)
+        public Persona(string nombre, string ciudad, DateTime fechaNamicimiento)
         {
             Nombre = nombre;
             Ciudad = ciudad;
-            Edad= edad;
+            FechaNacimiento = fechaNamicimiento;
             
         }
 
@@ -24,16 +24,16 @@ namespace Poo
         {
             Console.WriteLine($"Nombre: {Nombre}");
             Console.WriteLine($"Ciudad: {Ciudad}");
-            Console.WriteLine($"Edad: {Edad} años");
+            Console.WriteLine($"Edad: {CalcularEdadEnAños()} años");
         }
 
 
-        public int CalcularEdadEnAños()
+        public virtual int CalcularEdadEnAños()
         {
-            DateTime fechaActual = DateTime.Now;
-            int anioActual = fechaActual.Year;
+            DateTime yearactual = DateTime.Now;
+            int edad = yearactual.Year - FechaNacimiento.Year;
 
-            return anioActual - Edad;
+            return edad;
         }
 
 
